@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-authapp-8b012": {
+      "hosting": {
+        "FirebaseAuthApp": [
+          "fir-authapp-8b012"
+        ]
+      }
+    }
+  }
+}

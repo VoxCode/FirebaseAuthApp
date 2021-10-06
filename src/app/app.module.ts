@@ -1,14 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
+import {AngularFireModule} from "@angular/fire/compat";
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { DetailComponent } from './detail/detail.component';
+import { BlocksComponent } from './blocks/blocks.component';
+import { TableComponent } from './table/table.component';
+
+import {environment} from "../environments/environment";
+import {ReactiveFormsModule} from "@angular/forms";
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    SignupComponent,
+    LoginComponent,
+    DetailComponent,
+    BlocksComponent,
+    TableComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

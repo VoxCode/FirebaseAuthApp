@@ -1,0 +1,19 @@
+<div class="col-4 login-form">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailVal" required>
+      <div id="validationServer03Feedback" class="invalid-feedback">
+        Please enter correct email
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+    </div>
+
+    <button style="margin-top: 20px" type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</div>
+
+
