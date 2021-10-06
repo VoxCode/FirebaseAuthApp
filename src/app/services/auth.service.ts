@@ -28,8 +28,8 @@ export class AuthService {
 
   loginUser(email: string, password: string): Promise<any> {
     return this.auth.signInWithEmailAndPassword(email, password)
-      .then((user) => {
-        console.log(user + 'Auth Service: login success')
+      .then(() => {
+        console.log('Auth Service: login success')
       }).catch(error => {
         console.log('Auth Service: login error, ' + error.code + ' ' + error )
         return {isValid: false, message: error.message}
