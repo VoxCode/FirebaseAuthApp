@@ -1,4 +1,5 @@
 <div class="col-4 login-form">
+  <h3>Login</h3>
   <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
     <div class="mb-3">
       <label for="email" class="form-label">Email address</label>
@@ -14,6 +15,9 @@
 
     <button style="margin-top: 20px" type="submit" class="btn btn-secondary">Submit</button>
   </form>
+  <div class="redirect">
+    <a routerLink="/signup">sign up</a>
+  </div>
 </div>
 
 
