@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Router} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import { GithubAuthProvider } from "firebase/auth";
+
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +36,17 @@ export class AuthService {
         console.log('Auth Service: login error, ' + error.code + ' ' + error )
         return {isValid: false, message: error.message}
       })
+  }
+
+  loginGitHub(): Promise<any> {
+    return this.auth.signInWithPopup(new GithubAuthProvider())
+      .then(() => {
+        console.log('Auth Service: login success')
+      })
+      .catch(error => {
+        console.log('Auth Service: login error, ' + error.code + ' ' + error )
+        return {isValid: false, message: error.message}
+      })
+
   }
 }
