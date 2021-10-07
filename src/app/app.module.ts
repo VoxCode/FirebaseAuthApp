@@ -16,6 +16,7 @@ import { TableComponent } from './table/table.component';
 
 import {environment} from "../environments/environment";
 import {UserSearchInGitService} from "./services/user-search-in-git.service";
+import { SignupGitComponent } from './signup-git/signup-git.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {UserSearchInGitService} from "./services/user-search-in-git.service";
     LoginComponent,
     DetailComponent,
     BlocksComponent,
-    TableComponent
+    TableComponent,
+    SignupGitComponent
   ],
   imports: [
     BrowserModule,

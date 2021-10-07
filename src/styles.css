@@ -7,3 +7,12 @@ body {
   background-color: #FAFAFA;
   font-family: 'Open Sans', sans-serif;
 }
+
+a {
+  color: #4b4b4b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
