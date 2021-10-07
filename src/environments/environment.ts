@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: "fir-authapp-8b012.appspot.com",
     messagingSenderId: "1080859034886",
     appId: "1:1080859034886:web:04db6063c51f479dfaca87"
-  }
+  },
+  apiUrl: 'https://api.github.com/'
 };
 
 /*

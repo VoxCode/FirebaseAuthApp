@@ -1,1 +1,25 @@
-<p>detail works!</p>
+<!-- Modal -->
+<div class="modal fade" id="detail" tabindex="-1" aria-labelledby="detailLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detailLabel">Detail</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+<!--        <img style="width: 20px" [src]="[user.avatar_url]" alt="avatar">-->
+
+        <div class="response-content">
+          <img [src]="[user.avatar_url]" alt="avatar">
+          <h4>{{user.login}}</h4>
+        </div>
+        <div class="information">
+          <h5><b>Type:&nbsp;</b>{{user.type}}</h5>
+          <h5><b>Link:&nbsp;</b><a [href]="user.html_url">{{user.html_url}}</a></h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

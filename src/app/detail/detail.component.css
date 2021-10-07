@@ -1,0 +1,24 @@
+.response-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.response-content > h4 {
+  margin-left: 10px;
+}
+
+.response-content > img {
+  width: 60px;
+}
+
+.information {
+  margin-top: 40px;
+}
+
+.information > h5 {
+  width: 90%;
+  overflow-wrap: break-word;
+  margin-bottom: 20px;
+}
+

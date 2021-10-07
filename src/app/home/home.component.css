@@ -6,6 +6,7 @@
 }
 
 .wrapper > button {
-  width: 100px;
+  width: 150px;
   margin: 15px;
+  display: block;
 }

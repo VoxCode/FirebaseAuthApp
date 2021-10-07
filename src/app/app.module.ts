@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import {AngularFireModule} from "@angular/fire/compat";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,8 +15,7 @@ import { BlocksComponent } from './blocks/blocks.component';
 import { TableComponent } from './table/table.component';
 
 import {environment} from "../environments/environment";
-import {ReactiveFormsModule} from "@angular/forms";
-
+import {UserSearchInGitService} from "./services/user-search-in-git.service";
 
 
 @NgModule({
@@ -32,9 +33,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [UserSearchInGitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

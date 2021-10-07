@@ -1,1 +1,27 @@
-<p>table works!</p>
+<div class="d-flex">
+  <input class="form-control me-2" type="search" placeholder="Search"
+         aria-label="Search" [(ngModel)]="searchValue" (keyup.enter)="getUsers()">
+  <button class="btn btn-outline-success" type="submit" (click)="getUsers()">Search</button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Login</th>
+    <th scope="col">Type</th>
+    <th scope="col">Link</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users; index as i" data-bs-toggle="modal" data-bs-target="#detail" (click)="openDetailModal(user)">
+    <th scope="row">{{i+1}}</th>
+    <td>{{user.login}}</td>
+    <td>{{user.type}}</td>
+    <td><a [href]="[user.html_url]">git</a></td>
+  </tr>
+
+  </tbody>
+</table>
+
+<app-detail [user]="user"></app-detail>

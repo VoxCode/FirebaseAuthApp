@@ -1,1 +1,13 @@
-<p>blocks works!</p>
+<div class="d-flex">
+  <input class="form-control me-2" type="search" placeholder="Search"
+         aria-label="Search" [(ngModel)]="searchValue" (keyup.enter)="getUsers()">
+  <button class="btn btn-outline-success" type="submit" (click)="getUsers()">Search</button>
+</div>
+
+<div class="list-group">
+  <a class="list-group-item list-group-item-action"
+     data-bs-toggle="modal" data-bs-target="#detail"
+     (click)="openDetailModal(user)" *ngFor="let user of users; index as i">{{i}}. {{user.login}}</a>
+</div>
+
+<app-detail [user]="user"></app-detail>
