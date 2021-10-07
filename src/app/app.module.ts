@@ -13,10 +13,10 @@ import { LoginComponent } from './login/login.component';
 import { DetailComponent } from './detail/detail.component';
 import { BlocksComponent } from './blocks/blocks.component';
 import { TableComponent } from './table/table.component';
+import { SignupGitComponent } from './signup-git/signup-git.component';
 
 import {environment} from "../environments/environment";
 import {UserSearchInGitService} from "./services/user-search-in-git.service";
-import { SignupGitComponent } from './signup-git/signup-git.component';
 
 
 @NgModule({

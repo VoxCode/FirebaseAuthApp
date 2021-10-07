@@ -15,19 +15,20 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/table" routerLinkActive="active">Table</a>
         </li>
-        <li *ngIf="(auth.user | async)" class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Exit
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a routerLink="/home" class="dropdown-item" (click)="logout()">Log out</a></li>
-          </ul>
-        </li>
       </ul>
-      <div style="width: 30px"></div>
-      <div *ngIf="(auth.user | async)" style="color: green">User is logged in</div>
-      <div *ngIf="!(auth.user | async)" style="color: red">User is not logged in</div>
+      <div style="padding-left: 0" class="container-fluid dropdown" *ngIf="user">
+
+        <a style="font-size: small; align-items: center; display: flex" class="navbar-brand dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <img *ngIf="user.photoURL" [src]="user.photoURL"
+               alt="avatar" height="24" class="d-inline-block align-text-top"> {{user.email}}
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a routerLink="/home" class="dropdown-item" (click)="logout()">Log out</a></li>
+        </ul>
+      </div>
     </div>
+
   </div>
 </nav>
 <div class="container" style="margin-top: 30px">
