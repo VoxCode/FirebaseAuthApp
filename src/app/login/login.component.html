@@ -3,17 +3,20 @@
   <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
     <div class="mb-3">
       <label for="email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailVal" required>
-      <div id="validationServer03Feedback" class="invalid-feedback">
-        Please enter correct email
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <span style="color: red; font-size: small">Please enter correct email</span>
       </div>
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
       <input type="password" class="form-control" id="password" formControlName="password">
+      <div *ngIf="password.invalid && (password.dirty)">
+        <span style="color: red; font-size: small">Password must be at least 6 characters long</span>
+      </div>
     </div>
 
-    <button style="margin-top: 20px" type="submit" class="btn btn-secondary">Submit</button>
+    <button style="margin-top: 20px" type="submit" class="btn btn-secondary" [disabled]="loginForm.invalid">Submit</button>
   </form>
   <div class="redirect">
     <a routerLink="/signup">sign up</a><p></p>

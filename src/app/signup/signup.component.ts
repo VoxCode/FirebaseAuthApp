@@ -13,7 +13,7 @@ export class SignupComponent {
 
   signupForm: FormGroup = new FormGroup({
     'email': new FormControl('', [Validators.email, Validators.required]),
-    'password': new FormControl('', Validators.required)
+    'password': new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
   firebaseErrorMessage = '';
@@ -32,8 +32,11 @@ export class SignupComponent {
       }
       else if (!result.isValid) {
         this.firebaseErrorMessage = result.message;
+        alert(this.firebaseErrorMessage)
       }
     });
   }
 
+  get email(): any { return this.signupForm.get('email'); }
+  get password(): any { return this.signupForm.get('password'); }
 }

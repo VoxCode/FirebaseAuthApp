@@ -12,7 +12,7 @@ export class LoginComponent {
 
   loginForm = new FormGroup({
     'email': new FormControl('', [Validators.required, Validators.email]),
-    'password': new FormControl('', Validators.required)
+    'password': new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
   firebaseErrorMessage = '';
@@ -31,7 +31,11 @@ export class LoginComponent {
       else if (!result.isValid) {
         console.log('login error', result);
         this.firebaseErrorMessage = result.message;
+        alert(this.firebaseErrorMessage)
       }
     });
   }
+
+  get email(): any { return this.loginForm.get('email'); }
+  get password(): any { return this.loginForm.get('password'); }
 }
